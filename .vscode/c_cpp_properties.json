@@ -228,9 +228,12 @@
                 "MBED_BUILD_TIMESTAMP=1573037844.02",
                 "DEVICE_FLASH=1",
                 "DEVICE_I2C_ASYNCH=1",
-                "TARGET_STM_EMAC"
+                "TARGET_STM_EMAC",
+                "\"_DEBUG\",",
+                "\"UNICODE\",",
+                "\"_UNICODE\""
             ],
-            "compilerPath": "arm-none-eabi-g++",
+            "compilerPath": "/opt/gcc-arm-none-eabi-9-2019-q4-major/bin/arm-none-eabi-g++",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "gcc-x64"
