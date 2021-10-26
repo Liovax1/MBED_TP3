@@ -3,7 +3,7 @@
  * @brief Basic Mbed 6 template file for SNIR students
  * @author sepro
  * @version 1.0
- * @date 04/11/2020
+ * @date 04/11/2021
  */
 
 #include "mbed.h"
