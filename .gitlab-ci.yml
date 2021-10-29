@@ -1,0 +1,37 @@
+
+# use mbedimage, based on debian stable
+
+# Script CI pour gitlab
+# image : Utilisation du runner mbedimage
+# Ce script compile les projets mbed
+# Seulement si c un tag ou la branche master
+
+image: mbedimage
+
+# variables:
+#   GIT_SUBMODULE_STRATEGY: recursive
+  
+stages:
+  - build
+#  - test
+
+job1:
+  only:
+    - master
+    - tags
+  stage: build
+  #before_script:
+    #  - apt update && apt -y install cmake
+  script:
+  - mbed new .
+  - mbed compile --source . --source /opt/mbed/mbed-os/ --profile=debug -t GCC_ARM -m NUCLEO_F746ZG
+  artifacts:
+    paths:
+    #  - BUILD
+
+# run tests
+#job2:
+#  stage: test
+#  script:
+#    - echo "This job runs in the test stage."
+
