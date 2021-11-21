@@ -1,4 +1,3 @@
-
 # use mbedimage, based on debian stable
 
 # Script CI pour gitlab
@@ -24,6 +23,7 @@ job1:
     #  - apt update && apt -y install cmake
   script:
   - mbed new .
+  - mbed deploy
   - mbed compile --source . --source /opt/mbed/mbed-os/ --profile=debug -t GCC_ARM -m NUCLEO_F746ZG
   artifacts:
     paths:
