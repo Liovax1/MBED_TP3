@@ -14,7 +14,9 @@ DigitalOut led1(LED1);
 int main() {
   while (true) {
     printf("LO SNIR \r\n");
-    led1 = !led1;
+    led1.write(1);
+    ThisThread::sleep_for(SLEEP_TIME);
+    led1.write(0);
     ThisThread::sleep_for(SLEEP_TIME);
   }
 }
