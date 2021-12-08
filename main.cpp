@@ -2,7 +2,7 @@
  * @file main.cpp
  * @brief Basic Mbed 6 template file for SNIR students
  * @author sepro
- * @version 1.0
+ * @version 1.01
  * @date 04/11/2021
  */
 
