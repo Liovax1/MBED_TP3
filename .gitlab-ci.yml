@@ -19,8 +19,11 @@ job1:
     - master
     - tags
   stage: build
-  #before_script:
+  before_script:
     #  - apt update && apt -y install cmake
+    mv mbed-os.lib mbed-os.lib.bak
+  after_script:
+    mv mbed-os.lib.bak mbed-os.lib
   script:
   - mbed new .
   - mbed deploy
