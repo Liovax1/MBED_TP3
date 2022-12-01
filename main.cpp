@@ -1,22 +1,21 @@
 /* *
  * @file main.cpp
  * @brief Basic Mbed 6 template file for SNIR students
- * @author sepro
+ * @author Liova
  * @version 1.01
- * @date 04/11/2021
+ * @date 01/12/2022
  */
 
 #include "mbed.h"
+#include "BME280.h"
 
 #define SLEEP_TIME 500ms // (msec)
-DigitalOut led1(LED1);
+BME280 capteur (I2C_SDA, I2C_SCL);
+void initialize(void);
+float getTemperature(void);
 
 int main() {
   while (true) {
-    printf("LO SNIR \r\n");
-    led1.write(1);
-    ThisThread::sleep_for(SLEEP_TIME);
-    led1.write(0);
-    ThisThread::sleep_for(SLEEP_TIME);
+    printf("Temperature : %2.2f \r\n", capteur.getTemperature()); 
   }
 }
