@@ -17,17 +17,12 @@ Grove_LCD_RGB_Backlight afficheur (I2C_SDA, I2C_SCL);
 
 int main() {
   while (true) {
-    printf("Temperature : %2.2f°C  Pression : %2.2fhPa  Humidité : %2.2f% \r\n", capteur.getTemperature(), capteur.getPressure(), capteur.getHumidity());
-    afficheur.setRGB(0x255, 0x000, 0x000);
-    afficheur.print("Hello World");
+    char tableau[16];
+    float temp = capteur.getTemperature();
+    sprintf (tableau, "T : %2.2fdegC", temp);
+    afficheur.print(tableau);
     afficheur.locate(0,1);
-    afficheur.print("Ceci est un test");
-    afficheur.locate(0,2);
-    ThisThread::sleep_for(SLEEP_TIME);
-    afficheur.setRGB(0x000, 0x255, 0x000);
-    ThisThread::sleep_for(SLEEP_TIME);
-    afficheur.setRGB(0x000, 0x000, 0x255);
-    ThisThread::sleep_for(SLEEP_TIME);
-
+    afficheur.clear();
+    afficheur.setRGB(0x000, 0x255, 0x255);
   }
 }
